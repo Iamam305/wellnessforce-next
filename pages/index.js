@@ -2,6 +2,7 @@ import CrossSell from "../components/landingPage/CrossSell"
 import FeatIn from "../components/landingPage/featIn"
 import Hero from "../components/landingPage/Hero"
 import LatestBlog from "../components/landingPage/LatestBlog"
+import Testimonial from "../components/landingPage/Testimonial"
 import Navbar from "../components/Navbar"
 
 const index = ({data}) => {
@@ -12,6 +13,7 @@ const index = ({data}) => {
       <CrossSell/>
       <FeatIn/>
       <LatestBlog data ={data}/>
+      <Testimonial/>
       
     </>
   )
