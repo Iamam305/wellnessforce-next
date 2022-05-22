@@ -1,6 +1,8 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+
 import Image from 'next/image'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const tesimonials = [
     {
@@ -26,9 +28,20 @@ const tesimonials = [
 
 ]
 const Testimonial = () => {
+    const SlidSettings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+       
+        slidesToShow: 1,
+        speed: 500
+      };
     return (
-        <Carousel showArrows={true} >
+       <>
+       <Slider {...SlidSettings}>
+           
             {tesimonials.map((testimonial, index) => (
+                <>
                 <div className="flex w-full md:w-1/2 m-auto" key={index}>
                     <Image src={testimonial.img} width={'300'} height={'300'}/>
                     <div className="flex flex-col ">
@@ -37,9 +50,15 @@ const Testimonial = () => {
                         <a href={testimonial.episode}>Listen to episode</a>
                     </div>
                 </div>
+                </>
             ))}
+           
+        
 
-        </Carousel>
+        </Slider>
+       </>
+
+      
     )
 }
 
