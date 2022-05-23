@@ -1,9 +1,10 @@
 import CrossSell from "../components/landingPage/CrossSell"
 import FeatIn from "../components/landingPage/featIn"
 import Hero from "../components/landingPage/Hero"
+import ImgSlider from "../components/landingPage/ImgSlider"
 import LatestBlog from "../components/landingPage/LatestBlog"
 import Testimonial from "../components/landingPage/Testimonial"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/layout/Navbar"
 
 const index = ({data}) => {
   return (
@@ -14,6 +15,9 @@ const index = ({data}) => {
       <FeatIn/>
       <LatestBlog data ={data}/>
       <Testimonial/>
+      <ImgSlider/>
+      <CrossSell/>
+
       
     </>
   )

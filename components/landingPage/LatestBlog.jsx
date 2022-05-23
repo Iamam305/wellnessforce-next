@@ -12,8 +12,8 @@ const LatestBlog = ({ data }) => {
                 <Image src={post.yoast_head_json.og_image[0].url} width={412} height={232} className='mx-auto' />
                 <div className="flex flex-col justify-between card-text mt-4">
                   <div>
-                    <h2 className="title-font text-2xl font-bold  text-gray-900 mb-3 text-justify">{post.title.rendered}</h2>
-                    <div className="text-gray-700 mb-3 text-lg font-medium leading-loose text-justify" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+                    <h2 className="title-font text-2xl font-bold  text-gray-900 mb-3 ">{post.title.rendered}</h2>
+                    <div className="text-gray-700 mb-3 text-lg font-medium leading-loose " dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
                   </div>
                   <div className=" px-8 py-4 bg-btnColor">
                     <Link href={`/blog/${post.slug}`} className="block text-white">Read More</Link>

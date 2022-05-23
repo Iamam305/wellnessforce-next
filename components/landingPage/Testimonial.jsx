@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { BiRightArrowAlt } from 'react-icons/bi'
 
 const tesimonials = [
     {
@@ -30,24 +31,31 @@ const tesimonials = [
 const Testimonial = () => {
     const SlidSettings = {
         className: "center",
-        centerMode: true,
-        infinite: true,
-       
-        slidesToShow: 1,
-        speed: 500
+      centerMode: true,
+      infinite: true,
+      slidesToShow: 1.60,
+      speed: 500,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+          }
+        },
+    ]
       };
     return (
        <>
-       <Slider {...SlidSettings}>
+       <Slider {...SlidSettings} className=" m-auto flex flex-col">
            
             {tesimonials.map((testimonial, index) => (
                 <>
-                <div className="flex w-full md:w-1/2 m-auto" key={index}>
-                    <Image src={testimonial.img} width={'300'} height={'300'}/>
-                    <div className="flex flex-col ">
-                        <h3>{testimonial.name}</h3>
-                        <p>{testimonial.review}</p>
-                        <a href={testimonial.episode}>Listen to episode</a>
+                <div className="flex flex-col lg:flex-row w-5/6 lg:w-3/4  m-auto justify-between items-center p-12 bg-white rounded-xl" key={index}>
+                    <Image src={testimonial.img} width={'300'} height={'300'} layout="raw" className="rounded-full border-8 border-gray-300 border-solid h-60"/>
+                    <div className="flex flex-col justify-around pl-7">
+                        <h3 className='text-3xl font-semibold'>{testimonial.name}</h3>
+                        <p className='text-lg'>{testimonial.review}</p>
+                        <a className='text-lg font-bold flex text-blue-500 items-center' href={testimonial.episode}>Listen to episode <BiRightArrowAlt /></a>
                     </div>
                 </div>
                 </>
